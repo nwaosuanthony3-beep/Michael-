@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael - Homework Helper</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #4f46e5;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #answer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f1ff;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 Michael</h1>
+  <p>Your Homework Helper</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Ask Michael</h2>
+
+    <p>Enter your homework question below:</p>
+
+    <textarea id="question" placeholder="Example: What is photosynthesis?"></textarea>
+
+    <button onclick="getAnswer()">Get Help</button>
+
+    <div id="answer"></div>
+  </div>
+</div>
+
+<script>
+  function getAnswer() {
+    const question = document.getElementById("question").value.trim();
+    const answer = document.getElementById("answer");
+
+    if (question === "") {
+      answer.style.display = "block";
+      answer.innerHTML = "Please enter a homework question.";
+      return;
+    }
+
+    answer.style.display = "block";
+    answer.innerHTML =
+      "<strong>Your question:</strong><br>" +
+      question +
+      "<br><br>" +
+      "🤖 Michael is ready to help! The AI answering system will be connected next.";
+  }
+</script>
+
+</body>
+</html>
